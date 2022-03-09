@@ -1,36 +1,23 @@
+
 interface Users {
     name?: string;
     surname?: string;
     age?: number;
     country?: string;
-    occupation?: string;
+    hobby?: string;
+    image?: string;
 }
 
 function User(props: Users) {
 return (
     <div className="user_info">
-        <p>Personal information</p>
-        <table>
-            <thead>
-                <tr>
-                    <td>Name</td>
-                    <td>Surname</td>
-                    <td>Age</td>
-                    <td>Country</td>
-                    <td>Occupation</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{props.name}</td>
-                    <td>{props.surname}</td>
-                    <td>{props.age}</td>
-                    <td>{props.country}</td>
-                    <td>{props.occupation}</td>
-                </tr>
-            </tbody>
-        </table>
-        
+        <img src={props.image} alt="User avatar" className="user_img"/>
+        <div className="user_text">
+            <p className="user_name_surname">I'm {props.name} {props.surname}</p>
+            <p className="user_age_country">I'm {props.age} years old and my homecountry is {props.country}</p>
+            <p className="user_hobby">I like {props.hobby}</p>
+        </div>
+
     </div>
 );
 }
