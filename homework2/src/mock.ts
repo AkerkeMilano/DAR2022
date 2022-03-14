@@ -47,7 +47,7 @@ export const actors: Actor[] = [
         name: 'Cillian Murphy',
         age: 45,
         country: 'Douglas, Ireland',
-        hobby: 'fossil hunting',
+        hobby: 'cars',
         image: 'https://www.rollingstone.co.uk/wp-content/uploads/sites/2/2021/12/Cillian-Murphy-Peaky-Blinders.jpg'
     }
 ]
