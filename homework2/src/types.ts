@@ -4,4 +4,14 @@ export interface Movie {
     description: string;
     duration: number;
     image: string;
+};
+
+export interface Actor {
+    id: number;
+    name: string;
+    age: number;
+    country: string;
+    hobby: string;
+    image: string;
 }
+

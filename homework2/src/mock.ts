@@ -1,4 +1,5 @@
 import { Movie } from './types';
+import { Actor } from './types';
 
 export const movies: Movie[] = [
     {
@@ -23,3 +24,30 @@ export const movies: Movie[] = [
         image: 'https://phantom-marca.unidadeditorial.es/2337ec80def791b20156f5351288ab99/resize/1320/f/jpg/assets/multimedia/imagenes/2021/12/22/16402016411702.jpg'
     }
 ];
+
+export const actors: Actor[] = [
+    {
+        id: 1,
+        name: 'Tom Hanks',
+        age: 65,
+        country: 'California, USA',
+        hobby: 'typewriters collection',
+        image: 'https://i.redd.it/phy5pzm5m6g61.jpg'
+    },
+    {
+        id: 2,
+        name: 'Kate Winslet',
+        age: 46,
+        country: 'Reading, United Kingdom',
+        hobby: 'fossil hunting',
+        image: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F20%2F2022%2F01%2F26%2Fcelebs-species-names-5.jpg&q=60'
+    },
+    {
+        id: 3,
+        name: 'Cillian Murphy',
+        age: 45,
+        country: 'Douglas, Ireland',
+        hobby: 'fossil hunting',
+        image: 'https://www.rollingstone.co.uk/wp-content/uploads/sites/2/2021/12/Cillian-Murphy-Peaky-Blinders.jpg'
+    }
+]
