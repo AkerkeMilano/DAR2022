@@ -24,7 +24,7 @@ const Main = () => {
         <h2 className="MainPage__header">Movies ({movies.length})</h2>
         <MoviesList selectedId={selectedMovie?.id} movies={movies} onMovieClick={movieClickHandler}></MoviesList>
         {selectedMovie && <VideoPlayer url={selectedMovie?.trailer} onClose={onClose}></VideoPlayer>}
-        <h2>Actors ({actors.length})</h2>
+        <h2 className="MainPage__header">Actors ({actors.length})</h2>
         <ActorsList actors={actors} selectedId={selectedActor?.id} onActorClick={actorClickHandler}></ActorsList>
     </div>;
 };

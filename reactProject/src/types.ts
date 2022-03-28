@@ -14,5 +14,8 @@ export interface Actor {
     country: string;
     hobby: string;
     image: string;
+    fb: string;
+    instg: string;
+    tw: string;
 }
 
