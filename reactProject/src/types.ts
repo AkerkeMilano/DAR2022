@@ -4,6 +4,7 @@ export interface Movie {
     description: string;
     duration: number;
     image: string;
+    trailer: string;
 };
 
 export interface Actor {
@@ -13,5 +14,8 @@ export interface Actor {
     country: string;
     hobby: string;
     image: string;
+    fb: string;
+    instg: string;
+    tw: string;
 }
 
