@@ -1,8 +1,6 @@
 import styled from 'styled-components';
-export const StyledActorsItem = styled.div<{selected: boolean;
-}>`
+export const StyledActorsItem = styled.div`
     margin-bottom: 1rem;
-    background-color: ${props => props.selected ? 'grey' : 'none'}
 `; 
 export const StyledItemImg = styled.img`
     width: 400px;

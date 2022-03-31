@@ -1,5 +1,6 @@
 import { Movie } from './types';
 import { Actor } from './types';
+import { User } from './types';
 
 export const movies: Movie[] = [
     {
@@ -63,3 +64,11 @@ export const actors: Actor[] = [
         tw: 'https://twitter.com/CMurphyFans?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
     }
 ]
+
+export const user: User = 
+    {
+        login: true,
+        firstName: 'Alina',
+        lastName: 'Miller',
+        avatar: "https://img.icons8.com/external-avatar-andi-nur-abdillah/64/000000/external-avatar-business-avatar-circle-avatar-andi-nur-abdillah-29.png"
+    };
