@@ -17,5 +17,12 @@ export interface Actor {
     fb: string;
     instg: string;
     tw: string;
-}
+};
+
+export interface User {
+    login: boolean;
+    firstName: string;
+    lastName: string;
+    avatar: string;
+};
 
