@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { MovieContext } from "../../contexts/MovieContext";
 import { Movie } from "../../types";
 import { StyledMovieItem, StyledItemImg } from './MovieItem.styles';
 type Props = {
     movie: Movie;
-    isSelected: boolean;
-    onItemClick: (v: Movie) => void;
 }
-const MovieItem: React.FC<Props> = ({ movie, isSelected = false , onItemClick}) => {
+const MovieItem: React.FC<Props> = ({ movie }) => {
+    const { movie: selectedMovie, changeMovie } = useContext(MovieContext);
     const [state, setState] = useState({
         loading: false,
         addedToWatchLater: false,
@@ -17,9 +17,12 @@ const MovieItem: React.FC<Props> = ({ movie, isSelected = false , onItemClick}) 
             addedToWatchLater: true,
         }));
     }
+    const onMovieClick = () => {
+        changeMovie(movie);
+    }
     return (
-    <StyledMovieItem selected={isSelected}>
-        <div onClick={() => onItemClick(movie)}>
+    <StyledMovieItem selected={!!selectedMovie && movie.id === selectedMovie?.id}>
+        <div onClick={onMovieClick}>
             <StyledItemImg src={movie.image} alt={movie.title}/>
             <div>{movie.title}</div>
             <div>{movie.description}</div>

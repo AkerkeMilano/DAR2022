@@ -1,27 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import ReactPlayer from "react-player"
 import styled from "styled-components";
+import { MovieContext } from "../../contexts/MovieContext";
 
 const StyledVideoWrapper = styled.div`
     padding: 1rem;
     `;
 
 type Props = {
-    url: string;
-    onClose?: () => void;
 }
-const VideoPlayer: React.FC<Props> = ({ url, onClose }) => {
+const VideoPlayer: React.FC<Props> = () => {
+    const { movie, changeMovie } = useContext(MovieContext);
     const closeHandler = () => {
-        if(onClose){
-            onClose();
-        }
+        changeMovie(null);
     }
-    return ( 
+    return movie ? ( 
     <StyledVideoWrapper>
         <button onClick={closeHandler}>Close</button>
-        <ReactPlayer url={url}></ReactPlayer>
+        <ReactPlayer url={movie.trailer}></ReactPlayer>
     </StyledVideoWrapper>
-    );
+    ) : null;
 };
 
 export default VideoPlayer;

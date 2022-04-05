@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Actor } from '../../types';
 import { StyledActorsItem, StyledItemImg, StyledActorBlock } from './ActorItem.styles';
 import styles from './ActorItem.module.scss';
@@ -8,18 +8,12 @@ import tw_icon from '../../img/tw.svg';
 
 type Props = {
     actor: Actor;
-    isSelected: boolean;
-    onItemClick: (v: Actor) => void;
 }
 
-const ActorItem: React.FC<Props> = ({ actor, isSelected = false , onItemClick} ) => {
-    // const [readMoreAboutActor, setReadMoreAboutActor] = useState(false);
-    // const readMoreClick = () => {
-    //     setReadMoreAboutActor(true);
-    // }
+const ActorItem: React.FC<Props> = ({ actor } ) => {
     return (
-    <StyledActorsItem selected={isSelected}>
-        <StyledActorBlock onClick={() => onItemClick(actor)}>
+    <StyledActorsItem>
+        <StyledActorBlock>
             <StyledItemImg src={actor.image} alt={actor.name}/>
             <div className={styles.info}>
                 <div className={styles.text_style}>Hi! I'm {actor.name}</div>
