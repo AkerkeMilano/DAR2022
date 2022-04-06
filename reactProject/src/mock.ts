@@ -1,5 +1,5 @@
 import { Movie } from './types';
-import { Actor } from './types';
+
 import { User } from './types';
 
 export const movies: Movie[] = [
@@ -29,41 +29,41 @@ export const movies: Movie[] = [
     }
 ];
 
-export const actors: Actor[] = [
-    {
-        id: 1,
-        name: 'Tom Hanks',
-        age: 65,
-        country: 'California, USA',
-        hobby: 'typewriters collection',
-        image: 'https://i.redd.it/phy5pzm5m6g61.jpg',
-        fb: 'https://www.facebook.com/TomHanks',
-        instg: 'https://www.instagram.com/tomhanks/?hl=en',
-        tw: 'https://twitter.com/tomhanks?lang=en',
-    },
-    {
-        id: 2,
-        name: 'Kate Winslet',
-        age: 46,
-        country: 'Reading, United Kingdom',
-        hobby: 'fossil hunting',
-        image: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F20%2F2022%2F01%2F26%2Fcelebs-species-names-5.jpg&q=60',
-        fb: 'https://www.facebook.com/KateElizabethWinslet.us/',
-        instg: 'https://www.instagram.com/kate.winslet.official/feed/',
-        tw: 'https://twitter.com/winsletlately?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
-    },
-    {
-        id: 3,
-        name: 'Cillian Murphy',
-        age: 45,
-        country: 'Douglas, Ireland',
-        hobby: 'cars',
-        image: 'https://www.rollingstone.co.uk/wp-content/uploads/sites/2/2021/12/Cillian-Murphy-Peaky-Blinders.jpg',
-        fb: 'https://www.facebook.com/cillianmurphyactor',
-        instg: 'https://www.instagram.com/cillianmurphyofficiall/?hl=en',
-        tw: 'https://twitter.com/CMurphyFans?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
-    }
-]
+// export const actors: Actor[] = [
+//     {
+//         id: 1,
+//         name: 'Tom Hanks',
+//         age: 65,
+//         country: 'California, USA',
+//         hobby: 'typewriters collection',
+//         image: 'https://i.redd.it/phy5pzm5m6g61.jpg',
+//         fb: 'https://www.facebook.com/TomHanks',
+//         instg: 'https://www.instagram.com/tomhanks/?hl=en',
+//         tw: 'https://twitter.com/tomhanks?lang=en',
+//     },
+//     {
+//         id: 2,
+//         name: 'Kate Winslet',
+//         age: 46,
+//         country: 'Reading, United Kingdom',
+//         hobby: 'fossil hunting',
+//         image: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F20%2F2022%2F01%2F26%2Fcelebs-species-names-5.jpg&q=60',
+//         fb: 'https://www.facebook.com/KateElizabethWinslet.us/',
+//         instg: 'https://www.instagram.com/kate.winslet.official/feed/',
+//         tw: 'https://twitter.com/winsletlately?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
+//     },
+//     {
+//         id: 3,
+//         name: 'Cillian Murphy',
+//         age: 45,
+//         country: 'Douglas, Ireland',
+//         hobby: 'cars',
+//         image: 'https://www.rollingstone.co.uk/wp-content/uploads/sites/2/2021/12/Cillian-Murphy-Peaky-Blinders.jpg',
+//         fb: 'https://www.facebook.com/cillianmurphyactor',
+//         instg: 'https://www.instagram.com/cillianmurphyofficiall/?hl=en',
+//         tw: 'https://twitter.com/CMurphyFans?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
+//     }
+// ]
 
 export const user: User = 
     {

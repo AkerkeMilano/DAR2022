@@ -11,7 +11,7 @@ const ActorsList: React.FC<Props> = ({ actors }) => {
     return (
         <div className={styles.list}>
             {actors.map((actor) => (
-            <div className={styles.listItem} key={actor.id}>
+            <div className={styles.listItem} key={actor.objectID}>
                 <ActorItem  actor={actor}></ActorItem>
             </div>
             ))}

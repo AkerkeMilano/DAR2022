@@ -8,15 +8,11 @@ export interface Movie {
 };
 
 export interface Actor {
-    id: number;
+    objectID: number;
     name: string;
-    age: number;
-    country: string;
-    hobby: string;
-    image: string;
-    fb: string;
-    instg: string;
-    tw: string;
+    rating: number;
+    alternative_name: string;
+    image_path: string;
 };
 
 export interface User {
