@@ -18,7 +18,6 @@ const StudentEdit = () => {
     }, [id]);
 
     const onSubmit = (data: Partial<Student>) => {
-        console.log(data);
         if(!id){
             return;
         }

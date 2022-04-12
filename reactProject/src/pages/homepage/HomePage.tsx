@@ -7,6 +7,9 @@ const HomePage = () => {
                 <li>
                     <Link to={'/students'}>Students</Link>
                 </li>
+                <li>
+                    <Link to={'/faculties'}>Faculties</Link>
+                </li>
             </ul>
         </div>
     )

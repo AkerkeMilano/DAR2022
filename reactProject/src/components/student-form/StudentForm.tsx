@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Course, Student } from "../../types";
+import { Student } from "../../types";
 
 type Props = {
   initialValues?: Partial<Student>;
@@ -15,14 +15,15 @@ const StudentForm: React.FC<Props> = ({ initialValues, onSubmit }) => {
       courses: [],
     }
   );
+
   const [courseName, setCourseName] = useState("");
+
   const changeField = (fieldName: keyof Student) => {
     return (e: any) =>
       setValues((v) => ({ ...v, [fieldName]: e.target.value }));
   };
 
   const addCourse = () => {
-    console.log(courseName);
     if (courseName && courseName.trim()) {
       setValues((v) => ({
         ...v,
@@ -37,19 +38,13 @@ const StudentForm: React.FC<Props> = ({ initialValues, onSubmit }) => {
     }
   };
 
-  const deleteCourse = (course: Course) => {
-      const indexEl = values.courses?.indexOf(course);
-      if(typeof indexEl === 'number'){
-        values.courses?.splice(indexEl, 1);
-      }
-      setValues((v) => ({
-        ...v,
-        courses: [
-          ...(v.courses || []),
-        ]
-      }))
-      
-  }
+  const deleteCourse = (id: number) => {
+    values.courses?.splice(id, 1);
+    setValues((v) => ({
+      ...v,
+      courses: [...(v.courses || [])],
+    }));
+  };
 
   return (
     <div>
@@ -95,12 +90,10 @@ const StudentForm: React.FC<Props> = ({ initialValues, onSubmit }) => {
                 value={course.name}
                 onChange={changeField("courses")}
               />
-               <button onClick={() => deleteCourse(course)}>Delete</button>
-
+              <button onClick={() => deleteCourse(idx)}>Delete</button>
             </li>
           ))}
         </ul>
-
         <button onClick={() => onSubmit(values)}>Submit</button>
       </div>
     </div>

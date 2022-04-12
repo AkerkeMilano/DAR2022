@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getStudent } from "../../../services/students";
 import { Student } from "../../../types";
-
 const StudentDetails = () => {
   const { id } = useParams();
   const [student, setStudent] = useState<Student>();
