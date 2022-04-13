@@ -30,7 +30,6 @@ const StudentCreate = () => {
     <div>
       <h2>Create student</h2>
       <StudentForm onSubmit={onFormSubmit} />
-      {state.message}
     </div>
   );
 };

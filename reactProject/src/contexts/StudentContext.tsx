@@ -38,6 +38,11 @@ function reducer(state: any, action: Action) {
         ...state,
         message: action.payload,
       };
+    case "DELETE_STUDENT":
+      return {
+        ...state,
+        students: state.students.filter((student: Student) => student.id !== action.payload),
+      }
     default:
       return state;
   }
