@@ -1,17 +1,19 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { StudentContext } from "../../../contexts/StudentContext";
 import { getStudents } from "../../../services/students";
 
-import { Student } from "../../../types";
+// import { Student } from "../../../types";
 
 const StudentsList = () => {
-  const [students, setStudents] = useState<Student[]>([]);
-
+  // const [students, setStudents] = useState<Student[]>([]);
+  const {state, dispatch} = useContext(StudentContext);
   useEffect(() => {
     getStudents().then((res) => {
-      setStudents(res);
+      dispatch({type: "GET_STUDENTS", payload: res})
     });
-  }, []);
+  }, [dispatch]);
+  
   return (
     <div>
       <h2>Students</h2>
@@ -29,7 +31,7 @@ const StudentsList = () => {
           </tr>
         </thead>
         <tbody>
-          {students.map((student) => (
+          {state.students.map((student) => (
             <tr key={student.id}>
               <td>{student.id}</td>
               <td>{student.firstName}</td>
