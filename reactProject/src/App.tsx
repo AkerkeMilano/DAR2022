@@ -12,24 +12,29 @@ import FacultyCreate from "./pages/faculties/create/FacultyCreate";
 import FacultyEdit from "./pages/faculties/edit/FacultyEdit";
 import { StudentProvider } from "./contexts/StudentContext";
 import Header from "./components/header/Header";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
+  const notify = () => toast("Wow so easy!");
   return (
     <Router>
       <StudentProvider>
         <div className="App">
           <Header />
-            <Routes>
-              <Route path={"/"} element={<HomePage />} />
-              <Route path={"/students"} element={<StudentsList />} />
-              <Route path={"/students/:id"} element={<StudentDetails />} />
-              <Route path={"/students/create"} element={<StudentCreate />} />
-              <Route path={"/students/edit/:id"} element={<StudentEdit />} />
-              <Route path={"/faculties"} element={<FacultiesList />} />
-              <Route path={"/faculties/:id"} element={<FacultyDetails />} />
-              <Route path={"/faculties/create"} element={<FacultyCreate />} />
-              <Route path={"/faculties/edit/:id"} element={<FacultyEdit />} />
-            </Routes>
+          <Routes>
+            <Route path={"/"} element={<HomePage />} />
+            <Route path={"/students"} element={<StudentsList />} />
+            <Route path={"/students/:id"} element={<StudentDetails />} />
+            <Route path={"/students/create"} element={<StudentCreate />} />
+            <Route path={"/students/edit/:id"} element={<StudentEdit />} />
+            <Route path={"/faculties"} element={<FacultiesList />} />
+            <Route path={"/faculties/:id"} element={<FacultyDetails />} />
+            <Route path={"/faculties/create"} element={<FacultyCreate />} />
+            <Route path={"/faculties/edit/:id"} element={<FacultyEdit />} />
+          </Routes>
+          <button onClick={notify}>Notify!</button>
+          <ToastContainer />
         </div>
       </StudentProvider>
     </Router>
