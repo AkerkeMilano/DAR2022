@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import FacultyForm from "../../../components/faculty-form/FacultyForm";
+import { ToastContext } from "../../../contexts/ToastContext";
 import { editFaculty, getFaculty } from "../../../services/faculties";
 import { Faculty } from "../../../types";
 
@@ -8,6 +9,7 @@ const FacultyEdit = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [faculty, setFaculty] = useState<Faculty>();
+  const { dispatch: toastDispatch } = useContext(ToastContext);
   useEffect(() => {
     if (!id) {
       return;
@@ -21,9 +23,20 @@ const FacultyEdit = () => {
     if (!id) {
       return;
     }
-    editFaculty(id, data).then((res) => {
+    editFaculty(id, data)
+    .then((res) => {
+      toastDispatch({
+        type: "SUCCESS",
+        payload: { message: "Faculty was edited" },
+      });
       navigate(`/faculties/${id}`);
-    });
+    })
+    .catch((err) => {
+      toastDispatch({
+        type: "ERROR",
+        payload: { message: err.message || "Faculty wasn't edited" },
+      });
+    });  
   };
   return (
     <div>

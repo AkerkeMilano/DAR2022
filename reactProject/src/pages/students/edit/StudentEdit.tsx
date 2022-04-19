@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import StudentForm from "../../../components/student-form/StudentForm";
 import { StudentContext } from "../../../contexts/StudentContext";
+import { ToastContext } from "../../../contexts/ToastContext";
 import { editStudent, getStudent } from "../../../services/students";
 import { Student } from "../../../types";
 
@@ -11,6 +12,7 @@ const StudentEdit = () => {
   const [student, setStudent] = useState<Student>();
 
   const { dispatch } = useContext(StudentContext);
+  const { dispatch: toastDispatch } = useContext(ToastContext);
   useEffect(() => {
     if (!id) {
       return;
@@ -24,10 +26,21 @@ const StudentEdit = () => {
     if (!id) {
       return;
     }
-    editStudent(id, data).then((res) => {
-      dispatch({ type: "EDIT_STUDENT", payload: "Student was edited" });
-      navigate(`/students/${id}`);
-    });
+    editStudent(id, data)
+      .then((res) => {
+        dispatch({ type: "EDIT_STUDENT", payload: "Student was edited" });
+        toastDispatch({
+          type: "SUCCESS",
+          payload: { message: "Student was edited" },
+        });
+        navigate(`/students/${id}`);
+      })
+      .catch((err) => {
+        toastDispatch({
+          type: "ERROR",
+          payload: { message: err.message || "Student wasn't edited" },
+        });
+      });  
   };
   return (
     <div>
